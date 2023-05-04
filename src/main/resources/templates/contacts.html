@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="${title}" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="style_tabl.css">
+
+    </head>
+    <body>
+    <header th:insert="~{blocks/header :: header}"></header>
+
+        <div class="nnn mt-3">
+            <h1>Связь с нами</h1>
+            <p>Свяжитесь с нами, используя любой из следующих способов:</p>
+            <ul>
+                <li>Номер телефона: <a href="tel:445963027">44-596-30-27</a></li>
+                <li>Электронная почта: <a href="mailto:nevzorovva4eslav@gmail.com">nevzorovva4eslav@gmail.com</a></li>
+                <li>Адрес: ул. Советская 102, Гомель 246019</li>
+                <li>Социальные сети:
+                    <ul>
+                        <li><a href="https://www.facebook.com/siviavio4ka">Facebook</a></li>
+                        <li><a href="https://www.twitter.com/siviavio4ka">Twitter</a></li>
+                        <li><a href="https://www.instagram.com/siviavio4ka">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/siviavio4ka">LinkedIn</a></li>
+                        <li><a href="https://www.vk.com/siviavio4ka">VK</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    <div th:insert="~{blocks/footer :: footer}"></div>
+
+    </body>
+</html>

@@ -1,0 +1,268 @@
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    background-color: #f4f4f4;  list-item*/
+/*    margin: 0px;*/
+/*}*/
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0px;
+}
+
+.container {
+    margin-top: -80px;
+    padding-bottom: 80px;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    width: 80%;
+    transform: scale(0.9);
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.alert ddd {
+    Width:900px;
+}
+
+.tit {
+    font-size: 2.5rem;
+    margin-top: 200px;
+    margin-bottom: 15px;
+}
+.h22 {
+    font-size: 2rem;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.container2 {
+    width: 800px;
+    padding-bottom: 30px;
+    margin-left: -30px;
+}
+
+.ggg
+{
+    padding-top: 70px;
+}
+.aaa
+{
+    width: 800px;
+    height: 100%;
+    padding-top: 30px;
+}
+
+.sss
+{
+    margin-top: 170px ;
+    margin-bottom: 20px;
+}
+.dad
+{
+    padding-top: 20px;
+}
+.nnn
+{
+    margin-right: 500px;
+    padding-top: 250px;
+
+}
+
+.month {
+    background-color: white;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.month h3 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.month .dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.date {
+    background-color: #f4f4f4;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.date:hover {
+    background-color: #e0e0e0;
+}
+
+
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    background-color: #f4f4f4;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    height: 100vh;*/
+/*    margin: 0px;*/
+/*}*/
+
+/*.container {*/
+/*    padding-top: 20px;*/
+/*}*/
+
+/*.calendar {*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(4, 1fr);*/
+/*    grid-gap: 1rem;*/
+/*    width: 80%;*/
+/*    transform: scale(0.9);*/
+/*}*/
+
+/*.month {*/
+/*    background-color: white;*/
+/*    border-radius: 5px;*/
+/*    padding: 1rem;*/
+/*    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+/*.month h3 {*/
+/*    text-align: center;*/
+/*    margin-top: 0;*/
+/*}*/
+
+/*.month .dates {*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(7, 1fr);*/
+/*    grid-gap: 0.5rem;*/
+/*    margin-top: 1rem;*/
+/*}*/
+
+/*.date {*/
+/*    background-color: #f4f4f4;*/
+/*    border-radius: 50%;*/
+/*    width: 30px;*/
+/*    height: 30px;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    text-decoration: none;*/
+/*    color: black;*/
+/*}*/
+
+/*.date:hover {*/
+/*    background-color: #e0e0e0;*/
+/*}*/
+
+
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    background-color: #f4f4f4;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    height: 100vh;*/
+/*    margin: 0px;*/
+/*}*/
+
+/*.container {*/
+/*    padding-top: 100px;*/
+/*    padding-bottom: 80px;*/
+/*}*/
+
+/*.calendar {*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(4, 1fr);*/
+/*    grid-gap: 1rem;*/
+/*    width: 80%;*/
+/*    transform: scale(0.9);*/
+/*}*/
+
+/*.alert ddd {*/
+/*    Width:900px;*/
+/*}*/
+
+/*.tit {*/
+/*    font-size: 2.5rem;*/
+/*    margin-top: 200px;*/
+/*    margin-bottom: 15px;*/
+/*}*/
+/*.h22 {*/
+/*    font-size: 2rem;*/
+/*    margin-top: 25px;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/*.container2 {*/
+/*    width: 800px;*/
+/*    padding-bottom: 80px;*/
+/*    margin-left: -30px;*/
+/*}*/
+
+/*.aaa*/
+/*{*/
+/*    z-index: 11111;*/
+/*    width: 800px;*/
+/*}*/
+
+/*.sss*/
+/*{*/
+/*    margin-top: 170px ;*/
+/*    margin-bottom: 20px;*/
+/*}*/
+/*.nnn*/
+/*{*/
+/*    margin-right: 600px;*/
+/*}*/
+
+/*.month {*/
+/*    background-color: white;*/
+/*    border-radius: 5px;*/
+/*    padding: 1rem;*/
+/*    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+/*.month h3 {*/
+/*    text-align: center;*/
+/*    margin-top: 0;*/
+/*}*/
+
+/*.month .dates {*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(7, 1fr);*/
+/*    grid-gap: 0.5rem;*/
+/*    margin-top: 1rem;*/
+/*}*/
+
+/*.date {*/
+/*    background-color: #f4f4f4;*/
+/*    border-radius: 50%;*/
+/*    width: 30px;*/
+/*    height: 30px;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    text-decoration: none;*/
+/*    color: black;*/
+/*}*/
+
+/*.date:hover {*/
+/*    background-color: #e0e0e0;*/
+/*}*/
