@@ -1,4 +1,4 @@
-<div th:fragment="footer">
+<div th:fragment="footer" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Calendar</font></font></a>
@@ -7,7 +7,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/contacts"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Связь</font></font></a>
                     </li>
+                    <ul class="navbar-nav" sec:authorize ="hasRole('ROLE_ADMIN')">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin"><font style="vertical-align: inherit;">Админ</font></a>
+                        </li>
+                    </ul>
                 </ul>
+            </div>
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link" href="/logout"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Выйти</font></font></a>
             </div>
         </div>
     </nav>

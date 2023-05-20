@@ -28,6 +28,16 @@ public class Events {
     @Column(name = "description")
     private String description;
 
+    @ManyToOne
+    private User user;
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
+    private User owner;
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Events(String title, LocalDate date, String description) {
         this.title = title;
         this.date = date;
