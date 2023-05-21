@@ -2,6 +2,7 @@ package com.calendarEvents.CalendarImpEvents.models;
 
 import com.calendarEvents.CalendarImpEvents.models.Enams.Role;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,8 +23,10 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+    @NotBlank(message = "Username required")
     @Column(name = "username", unique = true)
     private String username;
+    @NotBlank(message = "Password must not be empty")
     @Column(name = "password", length = 1000)
     private String password;
     @Column(name = "active")

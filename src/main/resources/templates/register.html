@@ -149,6 +149,7 @@
             </div>
             <label for="username">Имя:</label>
             <input type="text" id="username" th:field="*{username}" required>
+            <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="error"></div>
             <br>
             <label for="password">Пароль:</label>
             <input type="password" th:field="*{password}" id="password" name="password" required>
