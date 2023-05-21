@@ -55,9 +55,13 @@ public class UserService implements UserDetailsService {
     @Transactional
     public void deleteUser(Long id) {
         Optional<User> userOptional = userRepository.findById(id);
-        User user = userOptional.get();
-        eventsRepositiry.deleteAllByOwner(user);
-        userRepository.deleteById(id);
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            eventsRepositiry.deleteAllByOwner(user);
+            userRepository.deleteById(id);
+        }else {
+            log.info("User with id {} not found", id);
+        }
     }
 
     public User getUserById(Long id) {
