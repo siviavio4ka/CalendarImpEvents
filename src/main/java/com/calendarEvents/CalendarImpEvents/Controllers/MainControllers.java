@@ -1,14 +1,20 @@
 package com.calendarEvents.CalendarImpEvents.Controllers;
 
-import com.calendarEvents.CalendarImpEvents.models.Events;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ * Controller for processing requests to the main page of the application
+ */
 @Controller
 public class MainControllers {
 
+    /**
+     * Handles the request to the home page
+     * @param model to add attributes
+     * @return the view name for the home page
+     */
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("title", "Главная страница");

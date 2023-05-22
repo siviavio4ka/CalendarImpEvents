@@ -85,7 +85,6 @@ class UserServiceTest {
             userService.banUser(id);
             Assert.assertTrue(user.isActive());
         }
-
     }
     @Test
     void banUser_whenNotFound() {
@@ -107,7 +106,6 @@ class UserServiceTest {
             Assert.assertFalse(userRepository.findById(id).isPresent());
         }
     }
-
     @Test
     void deleteUser_whenNotFound() {
         Long id = 0L;
@@ -117,8 +115,6 @@ class UserServiceTest {
         Mockito.verify(userRepository, Mockito.never()).deleteById(id);
         Mockito.verify(eventsRepositiry, Mockito.never()).deleteAllByOwner(any());
     }
-
-
 
     @Test
     void getUserById_found() {

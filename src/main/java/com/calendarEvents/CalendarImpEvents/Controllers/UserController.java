@@ -18,26 +18,53 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+/**
+ * Controller to handle requests related to User management
+ */
 @Controller
 @RequiredArgsConstructor
 public class UserController {
 
+    /**
+     * Repository for user management
+     */
     @Autowired
     private final UserRepository userRepository;
+    /**
+     * Used to encode passwords
+     */
     private final PasswordEncoder passwordEncoder;
 
+    /**
+     * Handles request to show register page
+     * @param model to add attributes
+     * @return the view name for the register page
+     */
     @GetMapping("/register")
     public String register(Model model) {
         model.addAttribute("user", new User());
         return "register";
     }
 
+    /**
+     * Logs out the user
+     * @param request to get the HTTP session
+     * @return the redirect view login
+     */
     @GetMapping("/logout")
     public String logout(HttpServletRequest request) {
         HttpSession session = request.getSession();
         session.invalidate();
         return "redirect:/login";
     }
+
+    /**
+     * Submitting the registration form
+     * @param user form data
+     * @param bindingResult form validation result
+     * @param model to add attributes
+     * @return redirect view name on success, "/register" on validation error
+     */
     @PostMapping("/register")
     public String register(@Valid @ModelAttribute User user, BindingResult bindingResult, Model model) {
         if (userRepository.findByUsername(user.getUsername()).isPresent()) {
@@ -53,11 +80,20 @@ public class UserController {
         return "redirect:/login";
     }
 
+    /**
+     * Handles request to show login page
+     * @return the view name for the login page
+     */
     @GetMapping("/login")
     public String login() {
         return "login";
     }
 
+    /**
+     * Handles request to show current user details
+     * @param model to add attributes
+     * @return view name for home page
+     */
     @GetMapping("/user")
     public String user(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

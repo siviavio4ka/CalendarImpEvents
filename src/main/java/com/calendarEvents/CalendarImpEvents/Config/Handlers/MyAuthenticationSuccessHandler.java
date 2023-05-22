@@ -14,12 +14,25 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.util.Optional;
 
+/**
+ * Handles authentication success by redirecting the user
+ */
 @Component
 public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
+    /**
+     * Repository for storing and managing users
+     */
     @Autowired
     UserRepository userRepository;
 
+    /**
+     * Redirects the user based on their role
+     * @param req the HTTP request
+     * @param res the HTTP response
+     * @param auth the Authentication
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     public void onAuthenticationSuccess(HttpServletRequest req,
                                         HttpServletResponse res,

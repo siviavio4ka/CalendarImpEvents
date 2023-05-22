@@ -24,26 +24,50 @@ import java.io.IOException;
 
 import static com.calendarEvents.CalendarImpEvents.models.Enams.Role.ROLE_ADMIN;
 
+/**
+ * Security configuration class.
+ * Secures application URLs and configures Spring Security.
+ */
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
 @EnableMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
+    /**
+     * Service for retrieving user data
+     */
     private final UserService userService;
 
+    /**
+     * Defines a BCryptPasswordEncoder bean
+     * @return the BCryptPasswordEncoder bean
+     */
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
+    /**
+     * Injects the authentication success handler
+     */
     @Autowired
     MyAuthenticationSuccessHandler myAuthenticationSuccessHandler;
 
+    /**
+     * Method that exposes the authentication success handler bean
+     * @return the authentication success handler
+     */
     public AuthenticationSuccessHandler authenticationSuccessHandler() {
         return myAuthenticationSuccessHandler;
     }
 
+    /**
+     * Method that configures security filters
+     * @param http the HttpSecurity
+     * @return the configured SecurityFilterChain
+     * @throws Exception if an error occurs while setting filters
+     */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
@@ -52,7 +76,7 @@ public class SecurityConfig {
                 .requestMatchers("/login","/register")
                 .permitAll()
                 .requestMatchers("/admin/**")
-                .hasAuthority(ROLE_ADMIN.getAuthority()) // будет ROLE_ADMIN
+                .hasAuthority(ROLE_ADMIN.getAuthority())
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -65,6 +89,14 @@ public class SecurityConfig {
                 .and()
                 .exceptionHandling()
                 .accessDeniedHandler(new AccessDeniedHandler() {
+                    /**
+                     * Handles access denied exception by redirecting to the access denied page
+                     * @param request the HTTP request
+                     * @param response the HTTP response
+                     * @param accessDeniedException the AccessDeniedException
+                     * @throws IOException if an I/O error occurs
+                     * @throws ServletException  if a servlet exception occurs
+                     */
                     @Override
                     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException, ServletException {
                         response.sendRedirect("/access-denied");
